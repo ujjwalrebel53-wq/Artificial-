@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:padding="24dp"
+    android:paddingTop="32dp"
+    android:gravity="center_horizontal">
+
+    <!-- Handle -->
+    <View android:layout_width="40dp" android:layout_height="4dp"
+        android:background="@color/outline" android:layout_gravity="center"
+        android:layout_marginBottom="28dp" />
+
+    <!-- Avatar -->
+    <TextView android:layout_width="70dp" android:layout_height="70dp"
+        android:id="@+id/tvSheetAvatarChar"
+        android:text="U" android:textSize="28sp" android:textColor="@color/text_primary"
+        android:gravity="center" 
+        android:background="@drawable/bg_gradient_avatar" android:layout_marginBottom="16dp" />
+
+    <!-- Name -->
+    <TextView android:id="@+id/tvSheetName" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="User"
+        android:textSize="22sp" 
+        android:textColor="@color/text_primary" android:layout_marginBottom="4dp" />
+
+    <!-- Email -->
+    <TextView android:id="@+id/tvSheetEmail" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="user@example.com"
+        android:textSize="13sp" android:textColor="@color/text_muted" android:layout_marginBottom="4dp" />
+
+    <!-- Role Badge -->
+    <TextView android:id="@+id/tvSheetRole" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="User"
+        android:textSize="11sp" android:textColor="@color/rebel_purple_light"
+        android:background="@drawable/bg_role_badge"
+        android:paddingHorizontal="10dp" android:paddingVertical="4dp" android:layout_marginBottom="28dp" />
+
+    <!-- Voice Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSheetVoice"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="🎙 Open Voice Assistant"
+        android:backgroundTint="@color/bg_hover"
+        android:textColor="@color/text_primary"
+        app:strokeColor="@color/outline"
+        app:strokeWidth="1dp"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="12dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+    <!-- Logout -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSheetLogout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Logout"
+        android:backgroundTint="@color/bg_hover"
+        android:textColor="@color/rebel_red"
+        app:strokeColor="@color/rebel_red"
+        app:strokeWidth="1dp"
+        app:cornerRadius="12dp"
+        android:layout_marginBottom="8dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+</LinearLayout>

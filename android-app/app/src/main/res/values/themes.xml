@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Main Theme -->
+    <style name="Theme.RebelAI" parent="Theme.Material3.Dark.NoActionBar">
+        <item name="colorPrimary">@color/rebel_purple</item>
+        <item name="colorPrimaryVariant">@color/rebel_purple_light</item>
+        <item name="colorSecondary">@color/rebel_teal</item>
+        <item name="colorSecondaryVariant">@color/rebel_teal_light</item>
+        <item name="colorSurface">@color/bg_secondary</item>
+        <item name="colorSurfaceVariant">@color/bg_tertiary</item>
+        <item name="colorOnPrimary">@color/text_primary</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="android:colorBackground">@color/bg_primary</item>
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">@color/bg_primary</item>
+        <item name="android:navigationBarColor">@color/bg_primary</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+        <!-- <item name="android:fontFamily">@font/inter_regular</item> -->
+        <item name="materialCardViewStyle">@style/CardStyle.RebelAI</item>
+    </style>
+
+    <!-- Splash Theme -->
+    <style name="Theme.RebelAI.Splash" parent="Theme.RebelAI">
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <!-- <item name="android:windowSplashScreenBackground">@color/bg_primary</item> -->
+    </style>
+
+    <!-- Voice Theme (full dark) -->
+    <style name="Theme.RebelAI.Voice" parent="Theme.RebelAI">
+        <item name="android:windowBackground">@color/bg_primary</item>
+        <item name="android:statusBarColor">#00000000</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <!-- Card Style -->
+    <style name="CardStyle.RebelAI" parent="Widget.Material3.CardView.Filled">
+        <item name="cardBackgroundColor">@color/bg_card</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">0dp</item>
+        <item name="strokeColor">@color/outline</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <!-- Suggestion Card -->
+    <style name="SuggestionCard" parent="CardStyle.RebelAI">
+        <item name="cardCornerRadius">14dp</item>
+    </style>
+
+    <!-- Button Styles -->
+    <style name="Btn.Primary" parent="Widget.Material3.Button">
+        <item name="android:backgroundTint">@color/rebel_purple</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="android:letterSpacing">0</item>
+        <item name="android:textSize">15sp</item>
+        <!-- <item name="android:fontFamily">@font/inter_semibold</item> -->
+    </style>
+
+    <style name="Btn.Secondary" parent="Widget.Material3.Button.OutlinedButton">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="strokeColor">@color/outline</item>
+        <item name="cornerRadius">50dp</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- Input Style -->
+    <style name="InputStyle" parent="Widget.Material3.TextInputLayout.FilledBox">
+        <item name="boxBackgroundColor">@color/bg_tertiary</item>
+        <item name="boxStrokeColor">@color/outline</item>
+        <item name="boxStrokeWidth">1.5dp</item>
+        <item name="boxCornerRadiusTopStart">14dp</item>
+        <item name="boxCornerRadiusTopEnd">14dp</item>
+        <item name="boxCornerRadiusBottomStart">14dp</item>
+        <item name="boxCornerRadiusBottomEnd">14dp</item>
+        <item name="hintTextColor">@color/text_muted</item>
+        <item name="android:textColorHint">@color/text_muted</item>
+        <item name="startIconTint">@color/text_muted</item>
+    </style>
+
+</resources>
