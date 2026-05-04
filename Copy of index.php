@@ -248,12 +248,16 @@ if (strpos($uri,'/api/')!==false) {
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="theme-color" content="#1a1a1a">
   <meta name="format-detection" content="telephone=no">
-  <title>Rebel Ai </title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Rebel AI — Unleash the Intelligence</title>
+  <meta name="description" content="Rebel AI — Advanced AI Assistant. Chat with Rebel GPT and use Rebel AI Voice Assistant.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+  <!-- Advanced UI v4.0 — External stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-  <!-- FIX: Correct relative path (no /assets/ prefix) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- Rebel AI v4.0 Advanced CSS -->
+  <link rel="stylesheet" href="style.css">
   <style>
 /* Global Styles */
 :root {
@@ -3513,6 +3517,17 @@ select.admin-config-input option {
 
 /* Login step — subtitle success color */
 #loginSubtitle { transition: color 0.4s ease; }
+
+/* ── Rebel AI v4.0 override: apply advanced theme variables to legacy selectors ── */
+body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+.header { background: rgba(10,10,15,0); }
+.header.scrolled { background: rgba(10,10,15,0.92); backdrop-filter: blur(20px); }
+.logo { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+.btn-primary { background: linear-gradient(135deg,#8a2be2,#00ced1); border: none; }
+.feature-card { background: linear-gradient(145deg,rgba(26,26,36,0.9),rgba(13,13,21,0.95)); border: 1px solid rgba(255,255,255,0.06); border-radius: 20px; }
+.chat-messages { background: #0a0a0f; }
+.message.bot-message { background: linear-gradient(145deg,rgba(26,26,36,0.9),rgba(13,13,21,0.95)); border: 1px solid rgba(255,255,255,0.06); border-radius: 16px; }
+.message.user-message { background: linear-gradient(135deg,#8a2be2,#00ced1); color: white; }
 
 </style>
   <!-- EmailJS SDK -->
@@ -7805,6 +7820,10 @@ RULES — strictly follow:
 
 
 </script>
+
+<!-- Rebel AI v4.0 Toast Container -->
+<div id="toastContainer" class="toast-container"></div>
+
 </body>
 </html>
 

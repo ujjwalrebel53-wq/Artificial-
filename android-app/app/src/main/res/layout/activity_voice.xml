@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_primary">
+
+    <!-- Topbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="8dp"
+        android:background="@color/bg_primary">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/tvTopbarTitle"
+            android:text="REBEL AI · NEURAL INTERFACE"
+            android:textSize="12sp"
+            android:textColor="@color/rebel_purple_light"
+            android:fontFamily="@font/space_grotesk_bold"
+            android:letterSpacing="0.1" />
+
+        <ImageButton
+            android:id="@+id/btnClose"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:src="@drawable/ic_close"
+            android:background="@drawable/bg_close_btn"
+            android:tint="@color/text_muted"
+            android:contentDescription="Close" />
+    </LinearLayout>
+
+    <!-- Main Voice Content (scrollable) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="20dp">
+
+            <!-- Avatar -->
+            <FrameLayout
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="16dp">
+
+                <!-- Glow rings -->
+                <View android:layout_width="160dp" android:layout_height="160dp"
+                    android:background="@drawable/bg_voice_ring_outer" android:alpha="0.3" />
+                <View android:layout_width="140dp" android:layout_height="140dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_voice_ring_mid" android:alpha="0.5" />
+
+                <!-- Avatar circle -->
+                <FrameLayout
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_gravity="center">
+                    <View android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:background="@drawable/bg_voice_avatar_gradient" />
+                    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                        android:text="🤖" android:textSize="48sp" android:gravity="center" />
+                </FrameLayout>
+            </FrameLayout>
+
+            <!-- Name & Subtitle -->
+            <TextView
+                android:id="@+id/tvAvatarName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rebel AI"
+                android:textSize="24sp"
+                android:fontFamily="@font/space_grotesk_bold"
+                android:textColor="@color/text_primary"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tvAvatarSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NEURAL INTERFACE · ALWAYS ON"
+                android:textSize="11sp"
+                android:textColor="@color/text_muted"
+                android:letterSpacing="0.1"
+                android:layout_marginBottom="12dp" />
+
+            <!-- Status Bar -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="20dp">
+                <ImageView android:id="@+id/statusDot" android:layout_width="8dp" android:layout_height="8dp"
+                    android:src="@drawable/ic_circle" android:layout_marginEnd="8dp" />
+                <TextView android:id="@+id/tvStatusText" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="STANDBY"
+                    android:textSize="12sp" android:textColor="@color/text_muted"
+                    android:fontFamily="@font/inter_semibold" android:letterSpacing="0.1" />
+            </LinearLayout>
+
+            <!-- Waveform -->
+            <com.rebelai.app.ui.widget.WaveformView
+                android:id="@+id/waveformView"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Transcript -->
+            <ScrollView
+                android:id="@+id/transcriptScroll"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:background="@drawable/bg_transcript"
+                android:layout_marginBottom="24dp">
+                <LinearLayout
+                    android:id="@+id/transcript"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="14dp" />
+            </ScrollView>
+
+            <!-- Controls -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="24dp">
+
+                <!-- Stop Speak -->
+                <ImageButton
+                    android:id="@+id/btnStopSpeak"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_stop"
+                    android:background="@drawable/bg_voice_side_btn"
+                    android:tint="@color/text_muted"
+                    android:contentDescription="Stop speaking"
+                    android:layout_marginEnd="20dp"
+                    android:visibility="gone" />
+
+                <!-- Main Mic Button -->
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center">
+                    <FrameLayout android:layout_width="80dp" android:layout_height="80dp">
+                        <View android:layout_width="match_parent" android:layout_height="match_parent"
+                            android:background="@drawable/bg_mic_ripple" android:id="@+id/micRipple" />
+                        <ImageButton
+                            android:id="@+id/btnMic"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:src="@drawable/ic_mic"
+                            android:tint="@color/text_primary"
+                            android:background="@drawable/bg_mic_btn"
+                            android:contentDescription="Start listening" />
+                    </FrameLayout>
+                    <TextView android:id="@+id/tvMicLabel" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="TAP TO SPEAK"
+                        android:textSize="11sp" android:textColor="@color/text_muted"
+                        android:fontFamily="@font/inter_semibold" android:letterSpacing="0.05"
+                        android:layout_marginTop="8dp" />
+                </LinearLayout>
+
+                <!-- Clear Transcript -->
+                <ImageButton
+                    android:id="@+id/btnClearTranscript"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_delete"
+                    android:background="@drawable/bg_voice_side_btn"
+                    android:tint="@color/text_muted"
+                    android:contentDescription="Clear transcript"
+                    android:layout_marginStart="20dp" />
+            </LinearLayout>
+
+            <!-- Quick Commands -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btnQuickTime"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="⏰ Time"
+                        android:textColor="@color/text_secondary"
+                        app:chipBackgroundColor="@color/bg_hover"
+                        app:chipStrokeColor="@color/outline"
+                        app:chipStrokeWidth="1dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btnQuickFact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="💡 Fun Fact"
+                        android:textColor="@color/text_secondary"
+                        app:chipBackgroundColor="@color/bg_hover"
+                        app:chipStrokeColor="@color/outline"
+                        app:chipStrokeWidth="1dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btnQuickQuote"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="💬 Quote"
+                        android:textColor="@color/text_secondary"
+                        app:chipBackgroundColor="@color/bg_hover"
+                        app:chipStrokeColor="@color/outline"
+                        app:chipStrokeWidth="1dp"
+                        android:layout_marginEnd="8dp" />
+
+                    <com.google.android.material.chip.Chip
+                        android:id="@+id/btnQuickHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="🤖 Capabilities"
+                        android:textColor="@color/text_secondary"
+                        app:chipBackgroundColor="@color/bg_hover"
+                        app:chipStrokeColor="@color/outline"
+                        app:chipStrokeWidth="1dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

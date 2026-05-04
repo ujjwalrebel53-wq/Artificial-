@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_primary"
+    android:fillViewport="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="match_parent">
+
+        <!-- BG Glow -->
+        <View
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:background="@drawable/bg_glow_purple"
+            android:alpha="0.12"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-80dp"
+            android:layout_marginEnd="-80dp" />
+
+        <!-- Main Content -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:padding="28dp"
+            android:paddingTop="64dp">
+
+            <!-- Logo -->
+            <FrameLayout
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginBottom="24dp">
+                <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/bg_logo_glow" android:alpha="0.7"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:gravity="center" android:background="@drawable/bg_logo">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🤖" android:textSize="32sp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- ── STEP LOGIN ── -->
+            <LinearLayout
+                android:id="@+id/stepLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Welcome Back" android:textSize="28sp" android:fontFamily="@font/space_grotesk_bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="6dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Sign in to continue" android:textSize="14sp" android:textColor="@color/text_muted"
+                    android:layout_marginBottom="28dp" />
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    app:startIconDrawable="@drawable/ic_person">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLoginUsername"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Username" android:inputType="textPersonName"
+                        android:textColor="@color/text_primary" android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:startIconDrawable="@drawable/ic_lock"
+                    app:endIconMode="password_toggle">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etLoginPassword"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Password" android:inputType="textPassword"
+                        android:textColor="@color/text_primary" android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:id="@+id/tvLoginError" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/rebel_red"
+                    android:textSize="13sp" android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    style="@style/Btn.Primary"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="Login" android:layout_marginBottom="16dp" />
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="or" android:textColor="@color/text_muted" android:textSize="13sp"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGoRegister"
+                    style="@style/Btn.Secondary"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="Create Account" />
+            </LinearLayout>
+
+            <!-- ── STEP EMAIL ── -->
+            <LinearLayout
+                android:id="@+id/stepEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Verify Email" android:textSize="28sp" android:fontFamily="@font/space_grotesk_bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="6dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Enter your email to receive OTP" android:textSize="14sp"
+                    android:textColor="@color/text_muted" android:layout_marginBottom="28dp" />
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:startIconDrawable="@drawable/ic_email">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEmail"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="your@email.com" android:inputType="textEmailAddress"
+                        android:textColor="@color/text_primary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:id="@+id/tvEmailError" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/rebel_red"
+                    android:textSize="13sp" android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSendOtp"
+                    style="@style/Btn.Primary"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="Send OTP" android:layout_marginBottom="16dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackFromEmail"
+                    style="@style/Btn.Secondary"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:text="← Back to Login" />
+            </LinearLayout>
+
+            <!-- ── STEP OTP ── -->
+            <LinearLayout
+                android:id="@+id/stepOtp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Check Your Email" android:textSize="28sp" android:fontFamily="@font/space_grotesk_bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="6dp" />
+                <TextView android:id="@+id/tvOtpSentTo" android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:text="OTP sent to your email"
+                    android:textSize="14sp" android:textColor="@color/text_muted" android:layout_marginBottom="28dp" />
+
+                <!-- OTP Boxes -->
+                <LinearLayout
+                    android:id="@+id/otpContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp">
+
+                    <EditText android:id="@+id/otp1" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                    <EditText android:id="@+id/otp2" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                    <EditText android:id="@+id/otp3" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                    <EditText android:id="@+id/otp4" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                    <EditText android:id="@+id/otp5" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                    <EditText android:id="@+id/otp6" android:layout_width="44dp" android:layout_height="56dp"
+                        android:inputType="numberDecimal" android:maxLength="1" android:gravity="center"
+                        android:textSize="22sp" android:textColor="@color/text_primary" android:fontFamily="@font/space_grotesk_bold"
+                        android:background="@drawable/bg_otp_box" android:layout_marginHorizontal="4dp" />
+                </LinearLayout>
+
+                <TextView android:id="@+id/tvOtpError" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/rebel_red"
+                    android:textSize="13sp" android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVerifyOtp"
+                    style="@style/Btn.Primary"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="Verify OTP" android:layout_marginBottom="16dp" />
+
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:gravity="center" android:layout_marginBottom="16dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Didn't receive? " android:textColor="@color/text_muted" android:textSize="13sp"/>
+                    <TextView android:id="@+id/btnResendOtp" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:text="Resend OTP"
+                        android:textColor="@color/rebel_purple_light" android:textSize="13sp"
+                        android:fontFamily="@font/inter_semibold" />
+                    <TextView android:id="@+id/tvResendTimer" android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" android:textColor="@color/text_muted" android:textSize="13sp"/>
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnBackFromOtp"
+                    style="@style/Btn.Secondary"
+                    android:layout_width="match_parent" android:layout_height="48dp"
+                    android:text="← Change Email" />
+            </LinearLayout>
+
+            <!-- ── STEP CREATE ── -->
+            <LinearLayout
+                android:id="@+id/stepCreate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center_horizontal"
+                android:visibility="gone">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Create Account" android:textSize="28sp" android:fontFamily="@font/space_grotesk_bold"
+                    android:textColor="@color/text_primary" android:layout_marginBottom="6dp" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="Set your credentials" android:textSize="14sp"
+                    android:textColor="@color/text_muted" android:layout_marginBottom="28dp" />
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp" app:startIconDrawable="@drawable/ic_person">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewUsername"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Choose a username" android:inputType="textPersonName"
+                        android:textColor="@color/text_primary" android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp" app:startIconDrawable="@drawable/ic_lock"
+                    app:endIconMode="password_toggle">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etNewPassword"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Create password (min 6 chars)" android:inputType="textPassword"
+                        android:textColor="@color/text_primary" android:imeOptions="actionNext" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout style="@style/InputStyle"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp" app:startIconDrawable="@drawable/ic_lock"
+                    app:endIconMode="password_toggle">
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etConfirmPass"
+                        android:layout_width="match_parent" android:layout_height="wrap_content"
+                        android:hint="Confirm password" android:inputType="textPassword"
+                        android:textColor="@color/text_primary" android:imeOptions="actionDone" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <TextView android:id="@+id/tvCreateError" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/rebel_red"
+                    android:textSize="13sp" android:layout_marginBottom="12dp" android:visibility="gone"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnCreateAccount"
+                    style="@style/Btn.Primary"
+                    android:layout_width="match_parent" android:layout_height="52dp"
+                    android:text="🚀 Create Account" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</ScrollView>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Brand Colors -->
+    <color name="rebel_purple">#8A2BE2</color>
+    <color name="rebel_purple_light">#A855F7</color>
+    <color name="rebel_teal">#00CED1</color>
+    <color name="rebel_teal_light">#22D3EE</color>
+    <color name="rebel_pink">#EC4899</color>
+    <color name="rebel_green">#10B981</color>
+    <color name="rebel_yellow">#F59E0B</color>
+    <color name="rebel_red">#EF4444</color>
+
+    <!-- Background Colors -->
+    <color name="bg_primary">#0A0A0F</color>
+    <color name="bg_secondary">#111118</color>
+    <color name="bg_tertiary">#1A1A24</color>
+    <color name="bg_card">#16161F</color>
+    <color name="bg_hover">#1E1E2A</color>
+    <color name="bg_active">#252535</color>
+    <color name="sidebar_bg">#0D0D15</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#F0F0F8</color>
+    <color name="text_secondary">#A0A0B8</color>
+    <color name="text_muted">#606078</color>
+    <color name="text_accent">#C084FC</color>
+
+    <!-- Status Bar -->
+    <color name="status_bar">#0A0A0F</color>
+
+    <!-- Gradients via GradientDrawable -->
+    <color name="gradient_start">#8A2BE2</color>
+    <color name="gradient_end">#00CED1</color>
+
+    <!-- Surface/Material 3 -->
+    <color name="surface">#111118</color>
+    <color name="surface_variant">#1A1A24</color>
+    <color name="on_surface">#F0F0F8</color>
+    <color name="outline">#2A2A3A</color>
+    <color name="primary">#8A2BE2</color>
+    <color name="on_primary">#FFFFFF</color>
+    <color name="secondary">#00CED1</color>
+    <color name="on_secondary">#000000</color>
+    <color name="background">#0A0A0F</color>
+    <color name="on_background">#F0F0F8</color>
+    <color name="error">#EF4444</color>
+    <color name="on_error">#FFFFFF</color>
+</resources>

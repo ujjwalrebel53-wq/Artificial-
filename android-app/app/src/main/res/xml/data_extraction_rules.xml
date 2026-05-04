@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<data-extraction-rules>
+    <cloud-backup>
+        <exclude domain="sharedpref" path="rebel_ai_secure.xml"/>
+        <exclude domain="database" />
+    </cloud-backup>
+</data-extraction-rules>
