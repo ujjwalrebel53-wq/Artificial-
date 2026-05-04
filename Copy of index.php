@@ -3042,6 +3042,9 @@ select.admin-config-input option {
   overflow: hidden;
   font-weight: 600;
   letter-spacing: 0.5px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(138,43,226,0.3);
+  touch-action: manipulation;
 }
 .btn-access-rebel:hover {
   transform: translateY(-2px);
@@ -4714,9 +4717,14 @@ document.addEventListener('DOMContentLoaded', function () {
   // ── Smooth scroll ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      // Skip bare "#" links — they are handled by their own dedicated click handlers
+      if (!href || href === '#') return;
       e.preventDefault();
-      const t = document.querySelector(this.getAttribute('href'));
-      if(t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 80, behavior:'smooth' });
+      try {
+        const t = document.querySelector(href);
+        if(t) window.scrollTo({ top: t.getBoundingClientRect().top + window.pageYOffset - 80, behavior:'smooth' });
+      } catch(_) {}
     });
   });
 
