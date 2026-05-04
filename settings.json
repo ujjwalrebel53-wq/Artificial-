@@ -1,0 +1,8 @@
+{
+    "admin_pass": "388a8dbcc73c046f45d018b1409f1ed727be98f72e44f8a25682d0221ba3cf6c",
+    "system_prompt": "You are Rebel Gpt, an advanced AI assistant created by Rebel bhaiya. You are helpful, rebellious, and expert in coding.",
+    "ai_streaming": "true",
+    "image_upload": "true",
+    "maintenance": "false",
+    "analytics": "true"
+}

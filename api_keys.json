@@ -1,0 +1,32 @@
+[
+    {
+        "id": 1,
+        "name": "Primary GPT-5",
+        "key_value": "rbx-80E944F8C2C6A3B2",
+        "perms": "Read, Write",
+        "usage": 0,
+        "max_limit": 5000,
+        "status": "active",
+        "created": "2026-04-27"
+    },
+    {
+        "id": 2,
+        "name": "Image API Key",
+        "key_value": "rbx-9FE796EC74C43EED",
+        "perms": "Read Only",
+        "usage": 0,
+        "max_limit": 2000,
+        "status": "active",
+        "created": "2026-04-27"
+    },
+    {
+        "id": 3,
+        "name": "Dev Test Key",
+        "key_value": "rbx-159B4BD51B604C96",
+        "perms": "Read, Write",
+        "usage": 0,
+        "max_limit": 500,
+        "status": "inactive",
+        "created": "2026-04-27"
+    }
+]

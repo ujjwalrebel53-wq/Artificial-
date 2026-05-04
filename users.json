@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "name": "Rebel Bhaiya",
+        "email": "admin@rebel.ai",
+        "password": "388a8dbcc73c046f45d018b1409f1ed727be98f72e44f8a25682d0221ba3cf6c",
+        "ip": "127.0.0.1",
+        "role": "Admin",
+        "status": "active",
+        "joined": "2026-04-27",
+        "messages": 0,
+        "device": "Desktop",
+        "last_login": "2026-04-27T06:25:02+02:00",
+        "login_count": 1
+    }
+]
