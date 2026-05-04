@@ -17,7 +17,9 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.permissionx.guolindev.PermissionX
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import android.content.pm.PackageManager
 import com.rebelai.app.R
 import com.rebelai.app.data.db.AppDatabase
 import com.rebelai.app.data.models.*
@@ -290,19 +292,26 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun requestMicPermission() {
-        PermissionX.init(this)
-            .permissions(Manifest.permission.RECORD_AUDIO)
-            .onExplainRequestReason { scope, _ -> scope.showRequestReasonDialog(listOf(Manifest.permission.RECORD_AUDIO), getString(R.string.mic_permission_msg), "OK", "Cancel") }
-            .request { allGranted, _, _ -> if (!allGranted) { } }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 100)
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 100 && grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
+            // Permission granted
+        } else if (requestCode == 101 && grantResults.firstOrNull() == PackageManager.PERMISSION_GRANTED) {
+            startVoiceInputInline()
+        }
     }
 
     private fun requestMicAndListen() {
-        PermissionX.init(this)
-            .permissions(Manifest.permission.RECORD_AUDIO)
-            .request { allGranted, _, _ ->
-                if (allGranted) startVoiceInputInline()
-                else Toast.makeText(this, getString(R.string.error_mic), Toast.LENGTH_SHORT).show()
-            }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) == PackageManager.PERMISSION_GRANTED) {
+            startVoiceInputInline()
+        } else {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 101)
+        }
     }
 
     private fun startVoiceInputInline() {

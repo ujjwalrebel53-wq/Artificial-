@@ -4,7 +4,6 @@ import android.content.Context
 import android.graphics.*
 import android.util.AttributeSet
 import android.view.View
-import kotlin.math.sin
 
 class WaveformView @JvmOverloads constructor(
     context: Context,
@@ -63,7 +62,7 @@ class WaveformView @JvmOverloads constructor(
         var first = true
         for (x in 0..width step 2) {
             val ratio = x.toFloat() / width
-            val y = height / 2f + sin(x * 0.02 + phase) * amplitude * sin(x * 0.01 + phase * 0.5)
+            val y = height / 2f + Math.sin(x * 0.02 + phase).toFloat() * amplitude * Math.sin(x * 0.01 + phase * 0.5).toFloat()
             if (first) { path.moveTo(x.toFloat(), y); first = false }
             else path.lineTo(x.toFloat(), y)
         }
@@ -74,7 +73,7 @@ class WaveformView @JvmOverloads constructor(
         val path2 = Path()
         first = true
         for (x in 0..width step 2) {
-            val y = height / 2f + sin(x * 0.015 + phase * 1.3 + 1) * amplitude * 0.5f
+            val y = height / 2f + Math.sin(x * 0.015 + phase * 1.3 + 1).toFloat() * amplitude * 0.5f
             if (first) { path2.moveTo(x.toFloat(), y); first = false }
             else path2.lineTo(x.toFloat(), y)
         }

@@ -88,8 +88,22 @@
                 android:paddingBottom="24dp"
                 android:background="@color/sidebar_bg">
 
-                <include layout="@layout/item_sidebar_footer_btn"
-                    android:id="@+id/btnVoiceAssistant" />
+                <LinearLayout
+                    android:id="@+id/btnVoiceAssistant"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="10dp"
+                    android:background="@drawable/bg_sidebar_btn"
+                    android:clickable="true"
+                    android:focusable="true">
+                    <ImageView android:layout_width="18dp" android:layout_height="18dp"
+                        android:src="@drawable/ic_mic" android:layout_marginEnd="12dp"
+                        android:tint="@color/text_secondary" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Voice Assistant" android:textSize="13sp" android:textColor="@color/text_secondary" />
+                </LinearLayout>
 
                 <!-- User Profile -->
                 <LinearLayout
@@ -112,13 +126,13 @@
                         android:gravity="center"
                         android:textSize="14sp"
                         android:textColor="@color/text_primary"
-                        android:fontFamily="@font/inter_bold"
+                        
                         android:background="@drawable/bg_gradient_avatar"
                         android:layout_marginEnd="10dp" />
 
                     <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
                         <TextView android:id="@+id/tvUserName" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="User" android:textSize="13sp" android:textColor="@color/text_primary" android:fontFamily="@font/inter_semibold" />
+                            android:text="User" android:textSize="13sp" android:textColor="@color/text_primary"  />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="Free Plan" android:textSize="11sp" android:textColor="@color/text_muted" />
                     </LinearLayout>
@@ -173,7 +187,7 @@
                     <TextView android:id="@+id/tvModelName" android:layout_width="wrap_content"
                         android:layout_height="wrap_content" android:text="Rebel GPT-5"
                         android:textSize="13sp" android:textColor="@color/text_primary"
-                        android:fontFamily="@font/inter_semibold" />
+                         />
                 </LinearLayout>
 
                 <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1" />
@@ -212,7 +226,7 @@
                             android:text="🤖" android:textSize="56sp" android:layout_marginBottom="20dp" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="How can I help you?" android:textSize="24sp"
-                            android:fontFamily="@font/space_grotesk_bold" android:textColor="@color/text_primary"
+                             android:textColor="@color/text_primary"
                             android:layout_marginBottom="8dp" />
                         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                             android:text="Ask anything — Powered by Rebel GPT-5" android:textSize="14sp"
@@ -241,7 +255,7 @@
                                         android:text="💻" android:textSize="20sp" android:layout_marginBottom="8dp"/>
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Write Python code" android:textSize="13sp"
-                                        android:fontFamily="@font/inter_semibold" android:textColor="@color/text_primary"
+                                         android:textColor="@color/text_primary"
                                         android:layout_marginBottom="4dp" />
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Sort list of dicts by key" android:textSize="11sp"
@@ -264,7 +278,7 @@
                                         android:text="🧠" android:textSize="20sp" android:layout_marginBottom="8dp"/>
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="AI Fun Fact" android:textSize="13sp"
-                                        android:fontFamily="@font/inter_semibold" android:textColor="@color/text_primary"
+                                         android:textColor="@color/text_primary"
                                         android:layout_marginBottom="4dp" />
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Interesting AI history" android:textSize="11sp"
@@ -286,7 +300,7 @@
                                         android:text="🎨" android:textSize="20sp" android:layout_marginBottom="8dp"/>
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="CSS Tips" android:textSize="13sp"
-                                        android:fontFamily="@font/inter_semibold" android:textColor="@color/text_primary"
+                                         android:textColor="@color/text_primary"
                                         android:layout_marginBottom="4dp" />
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Center div 3 ways" android:textSize="11sp"
@@ -308,7 +322,7 @@
                                         android:text="⚡" android:textSize="20sp" android:layout_marginBottom="8dp"/>
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Motivate Me" android:textSize="13sp"
-                                        android:fontFamily="@font/inter_semibold" android:textColor="@color/text_primary"
+                                         android:textColor="@color/text_primary"
                                         android:layout_marginBottom="4dp" />
                                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                                         android:text="Powerful quote" android:textSize="11sp"
@@ -390,7 +404,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:hint="@string/message_rebel_ai"
-                        android:hintTextColor="@color/text_muted"
+                        android:textColorHint="@color/text_muted"
                         android:textColor="@color/text_primary"
                         android:textSize="15sp"
                         android:background="@null"

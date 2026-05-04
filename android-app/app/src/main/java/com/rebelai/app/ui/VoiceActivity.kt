@@ -14,7 +14,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
 import androidx.lifecycle.lifecycleScope
-import com.permissionx.guolindev.PermissionX
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
+import android.content.pm.PackageManager
 import com.rebelai.app.data.network.NetworkModule
 import com.rebelai.app.data.prefs.UserPrefs
 import com.rebelai.app.databinding.ActivityVoiceBinding
@@ -106,17 +108,20 @@ class VoiceActivity : AppCompatActivity() {
     }
 
     private fun checkMicPermission() {
-        PermissionX.init(this)
-            .permissions(Manifest.permission.RECORD_AUDIO)
-            .request { allGranted, _, _ ->
-                if (!allGranted) {
-                    Toast.makeText(this, "Microphone permission required for voice features", Toast.LENGTH_LONG).show()
-                }
-            }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.RECORD_AUDIO), 101)
+        }
+    }
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        if (requestCode == 101 && grantResults.firstOrNull() != PackageManager.PERMISSION_GRANTED) {
+            Toast.makeText(this, "Microphone permission required for voice features", Toast.LENGTH_LONG).show()
+        }
     }
 
     private fun startListeningFlow() {
-        if (!PermissionX.isGranted(this, Manifest.permission.RECORD_AUDIO)) {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
             checkMicPermission()
             return
         }

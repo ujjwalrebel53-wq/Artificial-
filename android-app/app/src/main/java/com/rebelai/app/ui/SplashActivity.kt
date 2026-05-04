@@ -6,10 +6,8 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.View
-import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
-import com.rebelai.app.R
 import com.rebelai.app.data.prefs.UserPrefs
 import com.rebelai.app.databinding.ActivitySplashBinding
 

@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:text="@string/app_name"
             android:textSize="42sp"
-            android:fontFamily="@font/space_grotesk_bold"
+            
             android:textColor="@color/text_primary"
             android:letterSpacing="-0.02" />
 

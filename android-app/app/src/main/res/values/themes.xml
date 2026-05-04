@@ -17,14 +17,14 @@
         <item name="android:navigationBarColor">@color/bg_primary</item>
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:windowLightNavigationBar">false</item>
-        <item name="android:fontFamily">@font/inter_regular</item>
+        <!-- <item name="android:fontFamily">@font/inter_regular</item> -->
         <item name="materialCardViewStyle">@style/CardStyle.RebelAI</item>
     </style>
 
     <!-- Splash Theme -->
     <style name="Theme.RebelAI.Splash" parent="Theme.RebelAI">
         <item name="android:windowBackground">@color/bg_primary</item>
-        <item name="android:windowSplashScreenBackground" tools:targetApi="s">@color/bg_primary</item>
+        <!-- <item name="android:windowSplashScreenBackground">@color/bg_primary</item> -->
     </style>
 
     <!-- Voice Theme (full dark) -->
@@ -55,7 +55,7 @@
         <item name="cornerRadius">50dp</item>
         <item name="android:letterSpacing">0</item>
         <item name="android:textSize">15sp</item>
-        <item name="android:fontFamily">@font/inter_semibold</item>
+        <!-- <item name="android:fontFamily">@font/inter_semibold</item> -->
     </style>
 
     <style name="Btn.Secondary" parent="Widget.Material3.Button.OutlinedButton">

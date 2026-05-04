@@ -81,7 +81,7 @@ class AuthActivity : AppCompatActivity() {
 
         // CREATE STEP
         binding.btnCreateAccount.setOnClickListener { doCreateAccount() }
-        binding.etConfirmPassword.setOnEditorActionListener { _, actionId, _ ->
+        binding.etConfirmPass.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) { doCreateAccount(); true } else false
         }
     }

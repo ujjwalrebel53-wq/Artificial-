@@ -18,6 +18,7 @@
     <color name="bg_hover">#1E1E2A</color>
     <color name="bg_active">#252535</color>
     <color name="sidebar_bg">#0D0D15</color>
+    <color name="sidebar_border">#261A40</color>
 
     <!-- Text Colors -->
     <color name="text_primary">#F0F0F8</color>

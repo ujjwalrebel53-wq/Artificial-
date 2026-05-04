@@ -36,7 +36,7 @@
             android:text="Thinking…"
             android:textSize="14sp"
             android:textColor="@color/text_secondary"
-            android:fontFamily="@font/inter_regular"
+            
             android:textStyle="italic" />
     </LinearLayout>
 </LinearLayout>
